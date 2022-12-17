@@ -1,0 +1,86 @@
+[
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "title": "Piñata mariposa",
+        "description": "Piñata colorida con forma de mariposa",
+        "price": "250.00",
+        "slug": "piñata-mariposa",
+        "created_at": "",
+        "image": "products/deco_final.jpg"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "title": "Decoración azul",
+        "description": "Decoración con tema azul",
+        "price": "300.00",
+        "slug": "deco-azul",
+        "created_at": "",
+        "image": "products/deco1.jpg"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+        "title": "Decoración Rosa",
+        "description": "Decoración con tema rosado y luces",
+        "price": "250.00",
+        "slug": "deco-rosa",
+        "created_at": "",
+        "image": "products/deco2.jpg"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+        "title": "Decoración Rojo",
+        "description": "Decoración con tema rojo y silla de princesa",
+        "price": "400.00",
+        "slug": "deco-princesa",
+        "created_at": "",
+        "image": "products/DecoFlora.jpg"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+        "title": "Osito bailarín",
+        "description": "Osito sorprende con baile y serenata",
+        "price": "300.00",
+        "slug": "oso-baila",
+        "created_at": "",
+        "image": "products/osito1.jpg"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+        "title": "Osito regalo",
+        "description": "Osito sorprende con baile y entrega regalo",
+        "price": "300.00",
+        "slug": "oso-regalo",
+        "created_at": "",
+        "image": "products/osito2.jpg"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+        "title": "Decoración turquesa",
+        "description": "Decoración con tema turquesa y acoplador de Tortas",
+        "price": "350.00",
+        "slug": "turquesa-torta",
+        "created_at": "",
+        "image": "products/Raziel.jpg"
+    }
+}
+]

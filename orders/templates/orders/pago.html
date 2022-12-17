@@ -1,0 +1,114 @@
+{% url 'login' as login %}
+{% url 'register' as register %}
+{% url 'logout' as logout %}
+{% url 'carts:cart' as cart %}
+<html>
+    <head>
+        <title>Seccion de Pago</title>
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="referrer" content="origin">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-danger ">
+        <a class="navbar-brand" href="{% url 'index'  %}">🏪 Decoraciones Maciel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+    
+        {% if user.is_authenticated %}
+            <a class="nav-item nav-link {% if request.path == logout %}active{% endif %}"" href="{{ logout }}">
+                <span class="fas fa-sign-out-alt"></span>
+                Logout
+      
+            </a>
+    
+            <a class="nav-item nav-link {% if request.path == cart %}active{% endif %}" href="{{ cart }}">
+              <span class="fas fa-cart-plus"></span>
+              Mi Carrito
+          </a>
+                
+        {% else %}
+                <a class="nav-item nav-link {% if request.path == login %}active{% endif %}"" href="{{ login }}">
+                <span class="fas fa-user"></span>
+                Login
+            </a>
+            <a class="nav-item nav-link {% if request.path == register %}active{% endif %}" href="{{ register }}">
+                <span class="fas fa-user-plus"></span>
+                Registro
+    
+            
+            </a>
+            
+            <a class="nav-item nav-link {% if request.path == register %}active{% endif %}" href="http://127.0.0.1:8000/admin/login/?next=/admin/">
+              <span class="fas fa-user"></span>
+              Administrador
+    
+          
+          </a>
+          <a href="{% url 'carts:cart' %}" class="btn btn-warning">Ver Carrito</a>
+    
+    
+        {% endif %}
+    
+          </div>
+        </div>
+      </nav>
+        <br> 
+        <h1 align="center">Seccion de pago</h1>
+        <p align="center">Escanee el QR y realice su depósito, de lo contrario no será atendido</p> <br> 
+        <p align="center">"Aqui va el QR de la empresa"</p><br>
+        <div class="container">
+          <form action="https://formsubmit.co/puyes123456789@gmail.com" method="POST" >
+                <div class="form-group">
+                    <label for="nome">Nombre Completo</label>
+                    <input class="form-control" name="nombres" type="text" id="nombre" placeholder="Nombres"/>
+                </div>
+
+                <div class="form-group">
+                  <label for="cel">Celular</label>
+                  <input class="form-control" name="celular" type="text" id="celular" placeholder="Celular"/>
+              </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" name="email" type="text" id="email" placeholder="Email"/>
+                </div>
+
+                <div class="form-group">       
+                    <label for="senha">Ciudad del que escribe: </label>
+                    <input class="form-control" name="ciudad_origen" type="text" id="ciudad" placeholder="Ciudad"/>  
+                </div> 
+                
+                <div class="form-group">      
+                    <label for="selecao">Califique nuestros productos</label>
+                    <select input class="form-control" name="opinion" id="selecao">
+                    <option>Elija una opción</option>
+                    <option>Falta mejorar</option>
+                    <option>Me gustaron</option>
+                    <option>Agreguen más productos</option>
+                    <option>Me encantaron</option>
+                </select>
+                </div>
+        
+                <div class="form-group">        
+                    <label for="comentario">Escriba su mensajes para ser atendido: </label>
+                    <textarea class="form-control" name="mensaje" id="comentario"></textarea>
+                </div class="form-group">       
+                <div class="form-group">
+                  <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
+                  <input type="file" />
+                </div>
+                <button class="btn btn-success btn block" type="submit">Enviar</button>
+            </form>
+        </div>
+        
+        <script src="../bootstrap/js/jquery.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <script src="_js/script.js"></script>
+    </body>
+</html>
